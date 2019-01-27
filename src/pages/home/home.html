@@ -1,0 +1,72 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>Servicio Técnico</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="getting-started">
+	<div class="home-hello">
+		<img src="/assets/img/principal.jpg" />
+
+		<div class="hello-title" text-wrap>
+			<h1>Soporte Técnico LINEMIYIP.</h1>
+			La mejor solución a tu servicio
+			<br>
+
+			Calle 109, Avenida 109.
+		</div>
+	</div>
+
+	<ion-row *ngFor="let tilePair of tiles">
+		<ion-col *ngFor="let tile of tilePair">
+			<ion-card class="tile" (click)="navigateTo(tile)">
+				<ion-card-content>
+					<ion-item>
+						<h1><ion-icon [name]="tile.icon"></ion-icon></h1>
+						<h2>{{tile.title}}</h2>
+					</ion-item>
+				</ion-card-content>
+			</ion-card>
+		</ion-col>
+	</ion-row>
+
+	<ion-row>
+		<ion-card class="quick-action" (click)="callUs()">
+			<ion-card-content>
+				<ion-icon name="phone-portrait"></ion-icon>
+				<span>Call us</span>
+			</ion-card-content>
+		</ion-card>
+	</ion-row>
+
+	<ion-row>
+		<ion-card class="quick-action" (click)="sendEmail()">
+			<ion-card-content>
+				<ion-icon name="mail"></ion-icon>
+				<span>Send us and Email</span>
+			</ion-card-content>
+		</ion-card>
+	</ion-row>
+
+	<ion-row>
+		<ion-card class="quick-action" (click)="getDirections()">
+			<ion-card-content>
+				<ion-icon name="compass"></ion-icon>
+				<span>Find us / Get directions</span>
+			</ion-card-content>
+		</ion-card>
+	</ion-row>
+
+	<ion-row>
+		<ion-card class="quick-action" (click)="openFacebookPage()">
+			<ion-card-content>
+				<ion-icon name="logo-facebook"></ion-icon>
+				<span>Visit us on Facebook</span>
+			</ion-card-content>
+		</ion-card>
+	</ion-row>
+
+</ion-content>
