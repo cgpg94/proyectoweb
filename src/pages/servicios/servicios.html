@@ -7,10 +7,16 @@
 	</ion-navbar>
 </ion-header>
 
-<ion-content>
-	<ion-card *ngFor="let post of servicios!async" (click)="itemTapped(post)">
-		<ion-card-content>
-			<h2 class="card-title">{{c|json}}</h2>
-		</ion-card-content>
-	</ion-card>
+<ion-content padding>
+
+	<ion-list>
+			<ion-item >
+				
+					</ion-item>
+			<ion-item *ngFor="let item of arraydatos | async ">
+				<h2>{{item}} a</h2>
+				</ion-item>
+	</ion-list>
+
+
 </ion-content>

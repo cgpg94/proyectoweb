@@ -14,12 +14,17 @@ import { SlideBoxModule } from '../pages/slide-box/slide-box.module';
 
 import { MyApp } from './app.component';
 import { AngularFireModule } from 'angularfire2';
-import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { firebaseConfig } from '../config';
 import { LoginPage } from '../pages/login/login';
 import { AuthService } from '../services/auth.service';
 import { SignupPage } from '../pages/signup/signup';
 import { ServiciosPageModule } from '../pages/servicios/servicios.module';
+import { InformacionUsuarioPageModule } from '../pages/informacion-usuario/informacion-usuario.module';
+import { AcercaDePage } from '../pages/acerca-de/acerca-de';
+import { AcercaDePageModule } from '../pages/acerca-de/acerca-de.module';
+
 
 
 
@@ -35,16 +40,19 @@ import { ServiciosPageModule } from '../pages/servicios/servicios.module';
 		HttpModule,
 		IonicModule.forRoot(MyApp),
 		AgmCoreModule.forRoot(),
-
 		AngularFireModule.initializeApp(firebaseConfig.fire),
 
+		AngularFireAuthModule,
+		AngularFireAuthModule,
+		AngularFireDatabaseModule,
 		ComponentsModule,
 		NgxErrorsModule,
 		GoogleMapsModule,
 		HomeModule,
 		SlideBoxModule,
-		AngularFireAuthModule,
 		ServiciosPageModule,
+		InformacionUsuarioPageModule,
+		AcercaDePageModule
 		
 	],
 	bootstrap: [IonicApp],
@@ -57,8 +65,8 @@ import { ServiciosPageModule } from '../pages/servicios/servicios.module';
 		Config,
 		StatusBar,
 		{provide: ErrorHandler, useClass: IonicErrorHandler},
-		AngularFireAuth,
 		AuthService
+		
 	
 	]
 })

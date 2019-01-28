@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Pipe } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { ServiciosPage } from './servicios';
 
@@ -10,4 +10,5 @@ import { ServiciosPage } from './servicios';
     IonicPageModule.forChild(ServiciosPage),
   ],
 })
+
 export class ServiciosPageModule {}

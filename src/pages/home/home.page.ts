@@ -9,6 +9,7 @@ import { CallService } from '../../services/call.service';
 import { MapsService } from '../../services/maps.service';
 import { InAppBrowserService } from '../../services/in-app-browser.service';
 import { data } from './home-data';
+import { ServiciosPage } from '../servicios/servicios';
 
 @Component({
 	templateUrl: 'home.html',
@@ -61,8 +62,9 @@ export class HomePage {
 	private initTiles(): void {
 		this.tiles = [[{
 			title: 'Servicios',
-			path: 'wordpress-articles',
+			path: 'page-servicios',
 			icon: 'build',
+			component: ServiciosPage
 			
 		}, {
 			title: 'Novedades',

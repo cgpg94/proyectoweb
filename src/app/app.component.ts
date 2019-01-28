@@ -10,6 +10,8 @@ import { SlideBoxPage } from '../pages/slide-box/slide-box.page';
 import { LoginPage } from '../pages/login/login';
 import { AuthService } from '../services/auth.service';
 import { ServiciosPage } from '../pages/servicios/servicios';
+import { InformacionUsuarioPage } from '../pages/informacion-usuario/informacion-usuario';
+import { AcercaDePage } from '../pages/acerca-de/acerca-de';
 
 @Component({
 	templateUrl: 'app.html'
@@ -39,8 +41,8 @@ export class MyApp {
 			{ title: 'Servicios', component: ServiciosPage, icon: 'build' },
 			{ title: 'Novedades', component: SlideBoxPage, icon: 'help-circle' },
 			{ title: 'Ubicación', component: GoogleMapsPage, icon: 'map' },
-			{ title: 'Informacion Personal', component: GoogleMapsPage, icon: 'finger-print' },
-			{ title: 'Acerca de', component: GoogleMapsPage, icon: 'code-working'},
+			{ title: 'Informacion Personal', component: InformacionUsuarioPage, icon: 'finger-print' },
+			{ title: 'Acerca de', component: AcercaDePage, icon: 'code-working'},
 			{ title: 'Components', component: ComponentsListPage, icon: 'grid' },
 		];
 	}

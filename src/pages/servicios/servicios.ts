@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { FirebaseServiceProvider } from '../../services/firebase-service';
+import { Component} from '@angular/core';
+import { IonicPage, NavController, NavParams, Item } from 'ionic-angular';
+
+import {  AngularFireDatabase, AngularFireObject } from "angularfire2/database"; 
 
 /**
  * Generated class for the ServiciosPage page.
@@ -15,18 +16,22 @@ import { FirebaseServiceProvider } from '../../services/firebase-service';
   templateUrl: 'servicios.html',
 })
 export class ServiciosPage {
-  private servicios;
+  
+  public  servicios$;
+  arraydatos;
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    public dbService: FirebaseServiceProvider
-    ) {
-
-      this.servicios=this.dbService.getAll();
+    private database: AngularFireDatabase) {
+    this.servicios$ = this.database.list('servicios').valueChanges();
+    if(this.servicios$)
+    {
+      Object.keys(this.servicios$).forEach(function(key) {
+        
+        this.arraydatos.push(this.values[key]);
+});
+    }
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ServiciosPage');
-  }
+  
 
 }
