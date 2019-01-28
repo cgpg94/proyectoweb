@@ -1,0 +1,16 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>Servicios</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-card *ngFor="let post of servicios!async" (click)="itemTapped(post)">
+		<ion-card-content>
+			<h2 class="card-title">{{c|json}}</h2>
+		</ion-card-content>
+	</ion-card>
+</ion-content>
