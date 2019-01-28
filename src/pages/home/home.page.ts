@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { Nav } from 'ionic-angular';
-
-import { WordpressListPage } from '../wordpress/list/wordpress.list.page';
 import { SlideBoxPage } from '../slide-box/slide-box.page';
 import { GoogleMapsPage } from '../google-maps/google-maps.page';
 
@@ -65,7 +63,7 @@ export class HomePage {
 			title: 'Servicios',
 			path: 'wordpress-articles',
 			icon: 'build',
-			component: WordpressListPage
+			
 		}, {
 			title: 'Novedades',
 			path: 'slides',
