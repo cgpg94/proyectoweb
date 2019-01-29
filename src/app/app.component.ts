@@ -9,9 +9,9 @@ import { SlideBoxPage } from '../pages/slide-box/slide-box.page';
 
 import { LoginPage } from '../pages/login/login';
 import { AuthService } from '../services/auth.service';
-import { ServiciosPage } from '../pages/servicios/servicios';
 import { InformacionUsuarioPage } from '../pages/informacion-usuario/informacion-usuario';
 import { AcercaDePage } from '../pages/acerca-de/acerca-de';
+import { WordpressListPage } from '../pages/wordpress/list/wordpress.list.page';
 
 @Component({
 	templateUrl: 'app.html'
@@ -38,7 +38,7 @@ export class MyApp {
 		// set our app's pages
 		this.pages = [
 			{ title: 'Home', component: HomePage, icon: 'home' },
-			{ title: 'Servicios', component: ServiciosPage, icon: 'build' },
+			{ title: 'Servicios', component: WordpressListPage, icon: 'build' },
 			{ title: 'Novedades', component: SlideBoxPage, icon: 'help-circle' },
 			{ title: 'Ubicación', component: GoogleMapsPage, icon: 'map' },
 			{ title: 'Informacion Personal', component: InformacionUsuarioPage, icon: 'finger-print' },

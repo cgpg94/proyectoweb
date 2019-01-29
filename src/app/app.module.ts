@@ -15,17 +15,15 @@ import { SlideBoxModule } from '../pages/slide-box/slide-box.module';
 import { MyApp } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 import { firebaseConfig } from '../config';
 import { LoginPage } from '../pages/login/login';
 import { AuthService } from '../services/auth.service';
 import { SignupPage } from '../pages/signup/signup';
-import { ServiciosPageModule } from '../pages/servicios/servicios.module';
 import { InformacionUsuarioPageModule } from '../pages/informacion-usuario/informacion-usuario.module';
-import { AcercaDePage } from '../pages/acerca-de/acerca-de';
 import { AcercaDePageModule } from '../pages/acerca-de/acerca-de.module';
-import { ServiciosDataProvider } from '../providers/servicios-data/servicios-data';
 import { HttpClientModule } from '@angular/common/http';
+import { WordpressModule } from '../pages/wordpress/wordpress.module';
 
 
 
@@ -51,7 +49,7 @@ import { HttpClientModule } from '@angular/common/http';
 		GoogleMapsModule,
 		HomeModule,
 		SlideBoxModule,
-		ServiciosPageModule,
+		WordpressModule,
 		InformacionUsuarioPageModule,
 		AcercaDePageModule
 		
@@ -68,7 +66,7 @@ import { HttpClientModule } from '@angular/common/http';
 		{provide: ErrorHandler, useClass: IonicErrorHandler},
 		AuthService,
 		HttpClientModule,
-    ServiciosDataProvider
+		AngularFireAuth
 		
 	
 	]
