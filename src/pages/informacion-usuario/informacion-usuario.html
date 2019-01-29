@@ -22,9 +22,14 @@
         </ion-item>
         <ion-item>
           <ion-icon name="mail" item-start></ion-icon>
-          <ion-label stacked>Correo electronico:</ion-label>
-          <ion-input formControlName="email" type="email" placeholder="Email"></ion-input>
+          <ion-label disabled stacked>Correo electronico:</ion-label>
+          <ion-input formControlName="email" disabled="true" type="email" placeholder="Email"></ion-input>
         </ion-item>
+        <ion-item>
+            <ion-icon name="telefono" item-start></ion-icon>
+            <ion-label disabled stacked>Número de teléfono:</ion-label>
+            <ion-input formControlName="telefono"  type="text" placeholder="Teléfono"></ion-input>
+          </ion-item>
         <ion-item>
           <ion-icon name="calendar" item-start></ion-icon>
           <ion-label stacked>Fecha de nacimiento:</ion-label>

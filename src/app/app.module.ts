@@ -24,7 +24,7 @@ import { InformacionUsuarioPageModule } from '../pages/informacion-usuario/infor
 import { AcercaDePageModule } from '../pages/acerca-de/acerca-de.module';
 import { HttpClientModule } from '@angular/common/http';
 import { WordpressModule } from '../pages/wordpress/wordpress.module';
-
+import { Geolocation } from '@ionic-native/geolocation';
 
 
 
@@ -43,6 +43,7 @@ import { WordpressModule } from '../pages/wordpress/wordpress.module';
 		AgmCoreModule.forRoot(),
 		AngularFireModule.initializeApp(firebaseConfig.fire,'proyecto-web-final'),
 		AngularFireDatabaseModule,
+		
 		AngularFireAuthModule,
 		ComponentsModule,
 		NgxErrorsModule,
@@ -51,7 +52,9 @@ import { WordpressModule } from '../pages/wordpress/wordpress.module';
 		SlideBoxModule,
 		WordpressModule,
 		InformacionUsuarioPageModule,
-		AcercaDePageModule
+		AcercaDePageModule,
+		
+
 		
 	],
 	bootstrap: [IonicApp],
@@ -66,7 +69,9 @@ import { WordpressModule } from '../pages/wordpress/wordpress.module';
 		{provide: ErrorHandler, useClass: IonicErrorHandler},
 		AuthService,
 		HttpClientModule,
-		AngularFireAuth
+		AngularFireAuth,
+		Geolocation
+		
 		
 	
 	]
