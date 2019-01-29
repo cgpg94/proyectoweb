@@ -1,4 +1,4 @@
-export class DatosServicio {
+export interface DatosServicio {
     itemCodigo: string;
     itemNombre: string;
     itemDescripcion: string;

@@ -24,6 +24,8 @@ import { ServiciosPageModule } from '../pages/servicios/servicios.module';
 import { InformacionUsuarioPageModule } from '../pages/informacion-usuario/informacion-usuario.module';
 import { AcercaDePage } from '../pages/acerca-de/acerca-de';
 import { AcercaDePageModule } from '../pages/acerca-de/acerca-de.module';
+import { ServiciosDataProvider } from '../providers/servicios-data/servicios-data';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -38,13 +40,12 @@ import { AcercaDePageModule } from '../pages/acerca-de/acerca-de.module';
 	imports: [
 		BrowserModule,
 		HttpModule,
+		HttpClientModule,
 		IonicModule.forRoot(MyApp),
 		AgmCoreModule.forRoot(),
-		AngularFireModule.initializeApp(firebaseConfig.fire),
-
-		AngularFireAuthModule,
-		AngularFireAuthModule,
+		AngularFireModule.initializeApp(firebaseConfig.fire,'proyecto-web-final'),
 		AngularFireDatabaseModule,
+		AngularFireAuthModule,
 		ComponentsModule,
 		NgxErrorsModule,
 		GoogleMapsModule,
@@ -65,7 +66,9 @@ import { AcercaDePageModule } from '../pages/acerca-de/acerca-de.module';
 		Config,
 		StatusBar,
 		{provide: ErrorHandler, useClass: IonicErrorHandler},
-		AuthService
+		AuthService,
+		HttpClientModule,
+    ServiciosDataProvider
 		
 	
 	]

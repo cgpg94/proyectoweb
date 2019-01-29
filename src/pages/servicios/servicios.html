@@ -7,16 +7,11 @@
 	</ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
-	<ion-list>
-			<ion-item >
-				
-					</ion-item>
-			<ion-item *ngFor="let item of arraydatos | async ">
-				<h2>{{item}} a</h2>
-				</ion-item>
-	</ion-list>
-
-
+<ion-content>
+		<ion-list>
+		  <ion-item-sliding *ngFor='let task of objectKeys(servicios)'>
+				<h1>{{task}}
+				</h1>
+		  </ion-item-sliding>
+		</ion-list>
 </ion-content>

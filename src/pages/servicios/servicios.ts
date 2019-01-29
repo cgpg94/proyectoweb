@@ -1,8 +1,6 @@
-import { Component} from '@angular/core';
-import { IonicPage, NavController, NavParams, Item } from 'ionic-angular';
-
-import {  AngularFireDatabase, AngularFireObject } from "angularfire2/database"; 
-
+import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ServiciosDataProvider } from '../../providers/servicios-data/servicios-data';
 /**
  * Generated class for the ServiciosPage page.
  *
@@ -16,21 +14,31 @@ import {  AngularFireDatabase, AngularFireObject } from "angularfire2/database";
   templateUrl: 'servicios.html',
 })
 export class ServiciosPage {
-  
-  public  servicios$;
-  arraydatos;
+
+  serviciosD: any[] = [];
+
   constructor(
-    public navCtrl: NavController, 
+    public navCtrl: NavController,
     public navParams: NavParams,
-    private database: AngularFireDatabase) {
-    this.servicios$ = this.database.list('servicios').valueChanges();
-    if(this.servicios$)
-    {
-      Object.keys(this.servicios$).forEach(function(key) {
-        
-        this.arraydatos.push(this.values[key]);
-});
-    }
+    public serviciosData: ServiciosDataProvider
+   ) {
+
+   }
+   objectKeys (objeto: any) {
+    const keys = Object.keys(objeto);
+    console.log(keys); // echa un vistazo por consola para que veas lo que hace "Object.keys"
+    return keys;
+ }
+   ionViewDidLoad( ){
+    this.serviciosData.getRemoteData().subscribe(
+      (data) => { 
+        this.serviciosD = data['servicio1'];
+        console.log( this.serviciosD);
+      },
+      (error) =>{
+        console.error(error);
+      }
+    )
   }
   
 

@@ -1,4 +1,4 @@
-import { NgModule, Pipe } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { ServiciosPage } from './servicios';
 

@@ -1,6 +1,4 @@
 import { Injectable } from '@angular/core';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 @Injectable()
 export class Config {
