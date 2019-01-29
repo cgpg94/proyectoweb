@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 import { Config } from '../../config';
 import { Observable } from 'rxjs';
 import { Post } from './models/post.model';
-
+import { map } from 'rxjs/operators/map';
 
 @Injectable()
 export class WordpressService {
@@ -20,18 +20,13 @@ export class WordpressService {
 		return this.http.get(this.config.wordpressApiUrl)
 			.map(x => x.json())
 			.map(response => {
-				this.articles = response.posts.map((item: any) => this.createArticle(item));
+				console.log(response);
+				this.articles = response.servicios.map((item: any) => this.createArticle(item));
 				return this.articles;
 			});
 	}
 
 	private createArticle(item): Post {
-		let imageUrl = item.attachments.length > 0 ? item.attachments[0].images.full.url : null;
-		let tags = item.tags.map(x => x.title);
-
-		let contentIndex = item.content.indexOf('</p>') + 4;
-		let content = contentIndex === -1 ? item.content : item.content.substring(contentIndex);
-
 		return {
 			codigo: item.codigo,
 			nombre: item.nombre,

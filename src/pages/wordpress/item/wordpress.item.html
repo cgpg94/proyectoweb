@@ -9,12 +9,11 @@
 
 <ion-content>
 	<ion-card>
-		<img *ngIf="!!post.image" src="{{post.image}}"/>
 		<ion-card-content>
-			<h2 class="card-title">{{post.title}}</h2>
-			<div [innerHTML]="post.content"></div>
-			<p><strong>{{post.author}}</strong> - {{post.date}}</p>
-			<p><i>[{{post.tags.join(', ')}}]</i></p>
+			<h2 hidden>{{post.codigo}}</h2>
+			<h2 class="card-title">{{post.nombre}}</h2>
+			<div [innerHTML]="post.descripcion"></div>
+			<h2>{{post.valor}}</h2>
 		</ion-card-content>
 	</ion-card>
 </ion-content>
