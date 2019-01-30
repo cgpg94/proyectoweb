@@ -9,9 +9,9 @@ import { SlideBoxPage } from '../pages/slide-box/slide-box.page';
 
 import { LoginPage } from '../pages/login/login';
 import { AuthService } from '../services/auth.service';
-import { InformacionUsuarioPage } from '../pages/informacion-usuario/informacion-usuario';
 import { AcercaDePage } from '../pages/acerca-de/acerca-de';
 import { WordpressListPage } from '../pages/wordpress/list/wordpress.list.page';
+import { AdminPage } from '../pages/admin/admin';
 
 @Component({
 	templateUrl: 'app.html'
@@ -23,6 +23,7 @@ export class MyApp {
 	private app;
 	private platform;
 	private menu: MenuController;
+	private men;
 
 	@ViewChild(Nav) nav: Nav;
 
@@ -34,14 +35,15 @@ export class MyApp {
 		this.app = app;
 		this.platform = platform;
 		this.initializeApp();
-
+		if(this.auth.getEmail()=="gonpina94@gmail.com"){
+			this.men="{ title: 'Home Servicios', component: AdminPage, icon: 'build' }";
+		}
 		// set our app's pages
 		this.pages = [
 			{ title: 'Home', component: HomePage, icon: 'home' },
 			{ title: 'Servicios', component: WordpressListPage, icon: 'build' },
 			{ title: 'Novedades', component: SlideBoxPage, icon: 'help-circle' },
 			{ title: 'Ubicación', component: GoogleMapsPage, icon: 'map' },
-			{ title: 'Informacion Personal', component: InformacionUsuarioPage, icon: 'finger-print' },
 			{ title: 'Acerca de', component: AcercaDePage, icon: 'code-working'},
 			{ title: 'Components', component: ComponentsListPage, icon: 'grid' },
 		];

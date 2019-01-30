@@ -3,7 +3,10 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class Config {
 	public wordpressApiUrl = 'https://proyecto-web-final.firebaseio.com/todoslosservicios.json';
+
+	public userApiUrl = 'https://proyecto-web-final.firebaseio.com/usuarios.json';
 }
+	
 
 export const firebaseConfig = {
 	fire: {

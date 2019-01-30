@@ -15,7 +15,6 @@
 			<h2 class="card-title">{{post.nombre}}</h2>
 			<div [innerHTML]="post.descripcion"></div>
 			<h2>{{post.valor}}</h2>
-			<h2 *ngIf="auth.getEmail()">{{auth.getEmail()}}</h2>
 			<div>
 					<button ion-button color="secondary" block (click)="pedirservicio(post.codigo,post.nombre,post.descripcion,post.valor,auth.getEmail())">Pedir Servicio </button>
 			</div>

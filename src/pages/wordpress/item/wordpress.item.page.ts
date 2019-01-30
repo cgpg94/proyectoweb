@@ -20,12 +20,15 @@ export class WordpressItemPage {
 
 	pedirservicio(codi,titu,descrici,val,usuar,telefono) {
 		let prompt = this.alertCtrl.create({
-			title: 'Datos de direción',
-			message: 'Ingrese las especificaciones del la direción',
+			title: 'Datos para la visita',
 			inputs: [
 				{
 					name: 'direccion',
 					placeholder: 'Direccion'
+				},
+				{
+					name: 'telefono',
+					placeholder: 'Teléfono'
 				},
 			],
 			buttons: [
@@ -46,7 +49,8 @@ export class WordpressItemPage {
 							valor:val,
 							usuario:usuar,
 							numerotelefono:telefono,
-							direccion: data.direccion
+							direccion: data.direccion,
+							telefono: data.telefono
 							
 						});
 					}

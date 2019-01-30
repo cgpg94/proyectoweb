@@ -20,7 +20,6 @@ import { firebaseConfig } from '../config';
 import { LoginPage } from '../pages/login/login';
 import { AuthService } from '../services/auth.service';
 import { SignupPage } from '../pages/signup/signup';
-import { InformacionUsuarioPageModule } from '../pages/informacion-usuario/informacion-usuario.module';
 import { AcercaDePageModule } from '../pages/acerca-de/acerca-de.module';
 import { HttpClientModule } from '@angular/common/http';
 import { WordpressModule } from '../pages/wordpress/wordpress.module';
@@ -51,7 +50,6 @@ import { Geolocation } from '@ionic-native/geolocation';
 		HomeModule,
 		SlideBoxModule,
 		WordpressModule,
-		InformacionUsuarioPageModule,
 		AcercaDePageModule,
 		
 
