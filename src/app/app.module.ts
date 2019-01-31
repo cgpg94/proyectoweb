@@ -15,16 +15,15 @@ import { SlideBoxModule } from '../pages/slide-box/slide-box.module';
 import { MyApp } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
-import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireAuthModule, AngularFireAuth } from 'angularfire2/auth';
 import { firebaseConfig } from '../config';
 import { LoginPage } from '../pages/login/login';
 import { AuthService } from '../services/auth.service';
 import { SignupPage } from '../pages/signup/signup';
-import { ServiciosPageModule } from '../pages/servicios/servicios.module';
-import { InformacionUsuarioPageModule } from '../pages/informacion-usuario/informacion-usuario.module';
-import { AcercaDePage } from '../pages/acerca-de/acerca-de';
 import { AcercaDePageModule } from '../pages/acerca-de/acerca-de.module';
-
+import { HttpClientModule } from '@angular/common/http';
+import { WordpressModule } from '../pages/wordpress/wordpress.module';
+import { Geolocation } from '@ionic-native/geolocation';
 
 
 
@@ -38,21 +37,22 @@ import { AcercaDePageModule } from '../pages/acerca-de/acerca-de.module';
 	imports: [
 		BrowserModule,
 		HttpModule,
+		HttpClientModule,
 		IonicModule.forRoot(MyApp),
 		AgmCoreModule.forRoot(),
-		AngularFireModule.initializeApp(firebaseConfig.fire),
-
-		AngularFireAuthModule,
-		AngularFireAuthModule,
+		AngularFireModule.initializeApp(firebaseConfig.fire,'proyecto-web-final'),
 		AngularFireDatabaseModule,
+		
+		AngularFireAuthModule,
 		ComponentsModule,
 		NgxErrorsModule,
 		GoogleMapsModule,
 		HomeModule,
 		SlideBoxModule,
-		ServiciosPageModule,
-		InformacionUsuarioPageModule,
-		AcercaDePageModule
+		WordpressModule,
+		AcercaDePageModule,
+		
+
 		
 	],
 	bootstrap: [IonicApp],
@@ -65,7 +65,11 @@ import { AcercaDePageModule } from '../pages/acerca-de/acerca-de.module';
 		Config,
 		StatusBar,
 		{provide: ErrorHandler, useClass: IonicErrorHandler},
-		AuthService
+		AuthService,
+		HttpClientModule,
+		AngularFireAuth,
+		Geolocation
+		
 		
 	
 	]

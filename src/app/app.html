@@ -12,7 +12,6 @@
 			{{p.title}}
 		</ion-item>
 		<ion-list-header *ngIf="auth.getEmail()">{{auth.getEmail()}}</ion-list-header>
-
 		<ion-item (click)="logout()" *ngIf="auth.authenticated">
 			<ion-icon name="log-out" item-left></ion-icon>
 			Log out
@@ -28,4 +27,5 @@
 
 </ion-menu>
 
-<ion-nav id="nav" [root]="rootPage" #content swipe-back-enabled="false"></ion-nav>
+<ion-nav id="nav" [root]="rootPage" #content swipe-back-enabled="false"></ion-nav>
+

@@ -30,6 +30,7 @@ export class AuthService {
 	getEmail() {
 		return this.user && this.user.email;
 	}
+	
 
 	signOut(): Promise<void> {
 		return this.afAuth.auth.signOut();

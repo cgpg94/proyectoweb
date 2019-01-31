@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
 
 @Injectable()
 export class Config {
-	public wordpressApiUrl = 'http://demo.titaniumtemplates.com/wordpress/?json=1';
+	public wordpressApiUrl = 'https://proyecto-web-final.firebaseio.com/todoslosservicios.json';
+
+	public userApiUrl = 'https://proyecto-web-final.firebaseio.com/usuarios.json';
 }
+	
 
 export const firebaseConfig = {
 	fire: {

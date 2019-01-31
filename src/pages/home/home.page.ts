@@ -9,7 +9,8 @@ import { CallService } from '../../services/call.service';
 import { MapsService } from '../../services/maps.service';
 import { InAppBrowserService } from '../../services/in-app-browser.service';
 import { data } from './home-data';
-import { ServiciosPage } from '../servicios/servicios';
+import { WordpressListPage } from '../wordpress/list/wordpress.list.page';
+
 
 @Component({
 	templateUrl: 'home.html',
@@ -64,7 +65,7 @@ export class HomePage {
 			title: 'Servicios',
 			path: 'page-servicios',
 			icon: 'build',
-			component: ServiciosPage
+			component: WordpressListPage
 			
 		}, {
 			title: 'Novedades',
