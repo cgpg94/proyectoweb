@@ -48,7 +48,6 @@ export class WordpressItemPage {
 							descripcion:descrici,
 							valor:val,
 							usuario:usuar,
-							numerotelefono:telefono,
 							direccion: data.direccion,
 							telefono: data.telefono
 							
