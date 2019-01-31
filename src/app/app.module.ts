@@ -23,7 +23,7 @@ import { SignupPage } from '../pages/signup/signup';
 import { AcercaDePageModule } from '../pages/acerca-de/acerca-de.module';
 import { HttpClientModule } from '@angular/common/http';
 import { WordpressModule } from '../pages/wordpress/wordpress.module';
-import { Geolocation } from '@ionic-native/geolocation';
+
 
 
 
@@ -40,7 +40,7 @@ import { Geolocation } from '@ionic-native/geolocation';
 		HttpClientModule,
 		IonicModule.forRoot(MyApp),
 		AgmCoreModule.forRoot(),
-		AngularFireModule.initializeApp(firebaseConfig.fire,'proyecto-web-final'),
+		AngularFireModule.initializeApp(firebaseConfig.fire),
 		AngularFireDatabaseModule,
 		
 		AngularFireAuthModule,
@@ -68,7 +68,6 @@ import { Geolocation } from '@ionic-native/geolocation';
 		AuthService,
 		HttpClientModule,
 		AngularFireAuth,
-		Geolocation
 		
 		
 	
